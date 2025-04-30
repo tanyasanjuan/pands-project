@@ -17,5 +17,18 @@ import sklearn as skl
 # Resources: https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
 # To read the dataset, we use the read_csv function from the pandas library.
 # The dataset is in CSV format, and this specify the path to the file. 
-# Meaning it make the connection to a web server, to have a file.
+# Meaning, it make the connection to a web server, to have a file.
 # Pandas helps to interpretate the file received.
+
+
+# Import the Iris dataset.
+# Resources: https://archive.ics.uci.edu/dataset/53/iris
+filename = "iris_data.csv"
+
+# The read_csv function reads the CSV file and stores it in a DataFrame (df).
+# A DataFrame is a two-dimensional data structure with rows and columns, like a table or array.
+# Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
+
+df = pd.read_csv(filename)
+print(df)
+
