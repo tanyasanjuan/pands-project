@@ -28,7 +28,16 @@ filename = "iris_data.csv"
 # The read_csv function reads the CSV file and stores it in a DataFrame (df).
 # A DataFrame is a two-dimensional data structure with rows and columns, like a table or array.
 # Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
-
+# Read the file
 df = pd.read_csv(filename)
 print(df)
-
+# With print (df), we can see its a data set with 150 rows and 5 columns.
+# we can see the first 5 rows of the dataset.
+# The first row is the header, which contains the names of the columns.
+# The first column is the index, which is a unique identifier for each row.
+# The index is not part of the dataset, but it is used to identify each row.
+# The 5th column is the target variable, which is the species of the iris flower.
+# The target variable is the variable we want to predict.
+# The other columns are the features, 
+# which are the variables we use to predict the target variable.
+# The last 5 rows of the dataset are the same as the first 5 rows. 
