@@ -35,9 +35,30 @@ print(df)
 # we can see the first 5 rows of the dataset.
 # The first row is the header, which contains the names of the columns.
 # The first column is the index, which is a unique identifier for each row.
-# The index is not part of the dataset, but it is used to identify each row.
+# The index is not part of the dataset, but it's used to identify each row.
 # The 5th column is the target variable, which is the species of the iris flower.
 # The target variable is the variable we want to predict.
 # The other columns are the features, 
 # which are the variables we use to predict the target variable.
 # The last 5 rows of the dataset are the same as the first 5 rows. 
+
+# To get the first 5 rows of the dataset, we can use the head function.
+# The head function returns the first 5 rows of the dataset.
+df.head()
+print(df.head())
+
+# To have more information about the dataset, we can use the describe function.
+# Describe the dataset
+df.describe()
+print(df.describe())
+# The describe() function returns a summary of the dataset:
+# - count: Number of non-null values in the column.
+# - mean: Average value of the column.
+# - std: Standard deviation of the column, which measures the amount of variation or dispersion in the data.
+# - min: The minimum value in the column.
+# - 25%: The first quartile, which is the value below which 25% of the data falls.
+# - 50%: The median, which is the value below which 50% of the data falls.
+# - 75%: The third quartile, which is the value below which 75% of the data falls.
+# - max: The maximum value in the column.
+print(df.describe())
+
