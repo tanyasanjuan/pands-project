@@ -30,6 +30,10 @@ filename = "iris_data.csv"
 # Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
 # Read the file
 df = pd.read_csv(filename)
+
+# Add column names to the DataFrame
+df.columns = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'species']
+
 print(df)
 # With print (df), we can see its a data set with 150 rows and 5 columns.
 # we can see the first 5 rows of the dataset.
@@ -61,4 +65,3 @@ print(df.describe())
 # - 75%: The third quartile, which is the value below which 75% of the data falls.
 # - max: The maximum value in the column.
 print(df.describe())
-
