@@ -72,8 +72,8 @@ print(df.tail())
 
 # To have more information about the dataset, we can use the describe function.
 # Describe the dataset
-#df.describe()
-#print(df.describe())
+df.describe()
+print(df.describe())
 # The describe() function returns a summary of the dataset:
 # - count: Number of non-null values in the column.
 # - mean: Average value of the column.
@@ -83,4 +83,10 @@ print(df.tail())
 # - 50%: The median, which is the value below which 50% of the data falls.
 # - 75%: The third quartile, which is the value below which 75% of the data falls.
 # - max: The maximum value in the column.
+# Resource for quantiles: https://en.wikipedia.org/wiki/Quantile
+# Resource for quartiles: https://en.wikipedia.org/wiki/Quartile
+
+# To visualize the data, we can use the matplotlib library.
+# Matplotlib is a plotting library for Python.
+import matplotlib.pyplot as plt
 
