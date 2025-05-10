@@ -90,3 +90,19 @@ print(df.describe())
 # Matplotlib is a plotting library for Python.
 import matplotlib.pyplot as plt
 
+# Display the histogram of each variable.
+# We can use histograms to visualize the distribution of a dataset.
+# To display the histograms for each of the features, without having to duplicate the code 4 times, you can create for loops, which are useful for repeating an action several times.
+# Resource: https://www.w3schools.com/python/python_for_loops.asp
+
+# For loops will repeate the instruction, in this case for all the caracteristics of the iris flower.
+# The for loop will iterate over the columns of the DataFrame, and for each column, it will create a histogram.
+for column_name in df.columns[:-1]:  # Exclude the last column (species)
+    # plt.figure(), creates a separe histogram per each characteristic. 
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html
+    plt.figure()
+    plt.hist(df[column_name], edgecolor="black")
+    plt.xlabel(column_name)
+    plt.ylabel("frequency")
+    # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
+    plt.show()
