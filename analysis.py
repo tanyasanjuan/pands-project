@@ -30,6 +30,8 @@ filename = "iris_data.csv"
 # Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
 # Read the file
 df = pd.read_csv(filename)
+df = df.dropna(how='all')
+
 
 # Add column names to the DataFrame
 # Four columnns that are the caracteristics of the iris flower.
@@ -39,6 +41,7 @@ df = pd.read_csv(filename)
 df.columns = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'species']
 
 print(df)
+
 # With print (df), we can see its a data set with 150 rows and 5 columns.
 # we can see the first 5 rows of the dataset.
 # The first row is the header, which contains the names of the columns.
@@ -51,9 +54,9 @@ print(df)
 # The last 5 rows of the dataset are the same as the first 5 rows. 
 
 # Display the species of the iris flower.
+# The species are: setosa, versicolor, and virginica.
 df['species'] = pd.Categorical(df['species'])
 print(df['species'])
-# The species column is a categorical variable.
 
 
 # To get the first 5 rows of the dataset, we can use the head function.
@@ -75,6 +78,7 @@ print(df.tail())
 
 # Get the number of data for each species.
 # The value_counts function returns the number of occurrences of each unique value in the column.
+# Resource: https://www.geeksforgeeks.org/python-pandas-index-value_counts/
 df['species'].value_counts()
 print(df['species'].value_counts())
 
@@ -97,13 +101,13 @@ print(df.describe())
 
 # To visualize the data, we can use the matplotlib library.
 # Matplotlib is a plotting library for Python.
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 # Display the histogram of each variable.
 # We can use histograms to visualize the distribution of a dataset.
 # To display the histograms for each of the features, without having to duplicate the code 4 times, you can create for loops, which are useful for repeating an action several times.
 # Resource: https://www.w3schools.com/python/python_for_loops.asp
-'''
+
 # For loops will repeate the instruction, in this case for all the caracteristics of the iris flower.
 # The for loop will iterate over the columns of the DataFrame, and for each column, it will create a histogram.
 for column_name in df.columns[:-1]:  # Exclude the last column (species)
@@ -117,4 +121,3 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
     plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
-    '''
