@@ -32,6 +32,10 @@ filename = "iris_data.csv"
 df = pd.read_csv(filename)
 
 # Add column names to the DataFrame
+# Four columnns that are the caracteristics of the iris flower.
+# The four feature names, are independent variables, which are characteristics measured in centimeters, 
+# related to the sepals and petals of each species.
+# Source: https://www.geeksforgeeks.org/iris-dataset/
 df.columns = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'species']
 
 print(df)
@@ -40,21 +44,36 @@ print(df)
 # The first row is the header, which contains the names of the columns.
 # The first column is the index, which is a unique identifier for each row.
 # The index is not part of the dataset, but it's used to identify each row.
-# The 5th column is the target variable, which is the species of the iris flower.
+# The 5th column is the species of the iris flower.
 # The target variable is the variable we want to predict.
 # The other columns are the features, 
 # which are the variables we use to predict the target variable.
 # The last 5 rows of the dataset are the same as the first 5 rows. 
 
+# Display the species of the iris flower.
+df['species'] = pd.Categorical(df['species'])
+print(df['species'])
+# The species column is a categorical variable.
+
 # To get the first 5 rows of the dataset, we can use the head function.
 # The head function returns the first 5 rows of the dataset.
 df.head()
 print(df.head())
+# The first 5 rows in the dataset are showing the characteristics of the specie setosa, 
+# including the: sepal_length,sepal_width, petal_length, petal_width
+
+# To print the last 5 rows of the dataset, we can use the pandas module and the "tail" 
+# method to print the last rows starting from the bottom of the dataset.
+# Resource: https://www.w3schools.com/python/pandas/pandas_analyzing.asp
+df.tail()
+print(df.tail())
+# The last 5 rows in the dataset are showing the characteristics of the specie virginica, 
+# including the: sepal_length,sepal_width, petal_length, petal_width
 
 # To have more information about the dataset, we can use the describe function.
 # Describe the dataset
-df.describe()
-print(df.describe())
+#df.describe()
+#print(df.describe())
 # The describe() function returns a summary of the dataset:
 # - count: Number of non-null values in the column.
 # - mean: Average value of the column.
@@ -64,4 +83,4 @@ print(df.describe())
 # - 50%: The median, which is the value below which 50% of the data falls.
 # - 75%: The third quartile, which is the value below which 75% of the data falls.
 # - max: The maximum value in the column.
-print(df.describe())
+
