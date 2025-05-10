@@ -18,3 +18,24 @@ The Iris dataset has a total of five variables, which are divided into:
 ◽ Petal length
 
 ◽ Petal width
+
+## 🧪Analysis.
+The aim of this project is to analyse the iris data set, performing a exploratory data analysis (EDA):
+1. How the dataset is structured. 
+2. Visualization of each feature, using Matplotlib.
+3. Correlations between variables
+4. Comparison between species
+5. Visualization of the information. 
+6. Conclusion. 
+
+## Program structure
+- Import lybraries needed.
+- Import dataset and read the dataset.
+- Rename columns for easier reading.
+- Display general information of the dataset. 
+    -  Dimension of the dataframe: How many columns and rows the dataset contains.
+- Display the names of each species 
+- Display the first five and last five rows of the dataset. 
+- Get the number of  data for each species.
+- Import matplotlib
+- Histogram of each characteristic.
