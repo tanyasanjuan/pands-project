@@ -104,5 +104,8 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     plt.hist(df[column_name], edgecolor="black")
     plt.xlabel(column_name)
     plt.ylabel("frequency")
+    plt.title(f"Histogram of {column_name}")
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
-    plt.show()
+    #plt.show()
+    plt.savefig(f"{column_name}_histogram.png") # This will save the plot to a png file.
+    
