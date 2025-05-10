@@ -55,12 +55,14 @@ df['species'] = pd.Categorical(df['species'])
 print(df['species'])
 # The species column is a categorical variable.
 
+
 # To get the first 5 rows of the dataset, we can use the head function.
 # The head function returns the first 5 rows of the dataset.
 df.head()
 print(df.head())
 # The first 5 rows in the dataset are showing the characteristics of the specie setosa, 
 # including the: sepal_length,sepal_width, petal_length, petal_width
+
 
 # To print the last 5 rows of the dataset, we can use the pandas module and the "tail" 
 # method to print the last rows starting from the bottom of the dataset.
@@ -69,6 +71,13 @@ df.tail()
 print(df.tail())
 # The last 5 rows in the dataset are showing the characteristics of the specie virginica, 
 # including the: sepal_length,sepal_width, petal_length, petal_width
+
+
+# Get the number of data for each species.
+# The value_counts function returns the number of occurrences of each unique value in the column.
+df['species'].value_counts()
+print(df['species'].value_counts())
+
 
 # To have more information about the dataset, we can use the describe function.
 # Describe the dataset
@@ -88,13 +97,13 @@ print(df.describe())
 
 # To visualize the data, we can use the matplotlib library.
 # Matplotlib is a plotting library for Python.
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # Display the histogram of each variable.
 # We can use histograms to visualize the distribution of a dataset.
 # To display the histograms for each of the features, without having to duplicate the code 4 times, you can create for loops, which are useful for repeating an action several times.
 # Resource: https://www.w3schools.com/python/python_for_loops.asp
-
+'''
 # For loops will repeate the instruction, in this case for all the caracteristics of the iris flower.
 # The for loop will iterate over the columns of the DataFrame, and for each column, it will create a histogram.
 for column_name in df.columns[:-1]:  # Exclude the last column (species)
@@ -107,5 +116,5 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     plt.title(f"Histogram of {column_name}")
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
-    plt.savefig(f"{column_name}_histogram.png") # This will save the plot to a png file.
-    
+    plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
+    '''
