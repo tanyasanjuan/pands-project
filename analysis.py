@@ -127,10 +127,16 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
 # Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
 # Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
 
-# We can also check the correlation between the features.
-# Relationship between sepal length and petal lenght of the three species.
-# Choose two features of the DataFrame.
+# We can also check the relationship between the features.
+# We can use scatter plots to visualize the relationship between two variables.
+# To have more than two scatter plots, we can use subplots.
+# Subplots are used to create multiple plots in a single figure.
+# Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
+# https://interactivechaos.com/en/node/605
 
+
+# import numpy library.
+import numpy as np
 
 colors = {
     'Iris-setosa': 'salmon',
@@ -140,44 +146,39 @@ colors = {
 # With ".unique()" we extract the three unique species: 'setosa', 'versicolor', 'virginica'
 species = df['species'].unique()
 
-# axes[0] is the first graph.
-# axes[1] is the second graph.
-# Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
-# figsize is the size of the figure.
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-
-# First plot: sepal length vs petal length
-for sp in species:
-    subset = df[df['species'] == sp]
-    axes[0].scatter(
-        subset['sepal length (cm)'],
-        subset['petal length (cm)'],
-        label=sp,
-        color=colors[sp]
-    )
-axes[0].set_xlabel('sepal length (cm)')
-axes[0].set_ylabel('petal length (cm)')
-axes[0].set_title('Sepal Length vs Petal Length')
-axes[0].legend()
-
-# Second plot: sepal width vs petal width
-for sp in species:
-    subset = df[df['species'] == sp]
-    axes[1].scatter(
-        subset['sepal width (cm)'],
-        subset['petal width (cm)'],
-        label=sp,
-        color=colors[sp]
-    )
-axes[1].set_xlabel('sepal width (cm)')
-axes[1].set_ylabel('petal width (cm)')
-axes[1].set_title('Sepal Width vs Petal Width')
-axes[1].legend()
-# avoid overlapping of the plots.
+y = df['sepal length (cm)']
+fig, ax = plt.subplots(3, 2, figsize=(10, 10))
+ax[0, 0].scatter(df['sepal length (cm)'], df['sepal width (cm)'], c=[colors[s] for s in df['species']])
+ax[0, 0].set_xlabel('sepal length (cm)')
+ax[0, 0].set_ylabel('sepal width (cm)')
+ax[0, 0].set_title('Sepal Length vs Sepal Width')
+ax[0, 1].scatter(df['petal length (cm)'], df['petal width (cm)'], c=[colors[s] for s in df['species']])
+ax[0, 1].set_xlabel('petal length (cm)')
+ax[0, 1].set_ylabel('petal width (cm)')
+ax[0, 1].set_title('Petal Length vs Petal Width')
+ax[1, 0].scatter(df['sepal length (cm)'], df['petal length (cm)'], c=[colors[s] for s in df['species']])
+ax[1, 0].set_xlabel('sepal length (cm)')
+ax[1, 0].set_ylabel('petal length (cm)')
+ax[1, 0].set_title('Sepal Length vs Petal Length')
+ax[1, 1].scatter(df['sepal width (cm)'], df['petal width (cm)'], c=[colors[s] for s in df['species']])
+ax[1, 1].set_xlabel('sepal width (cm)')
+ax[1, 1].set_ylabel('petal width (cm)')
+ax[1, 1].set_title('Sepal Width vs Petal Width')
+ax[2, 0].scatter(df['sepal length (cm)'], df['petal width (cm)'], c=[colors[s] for s in df['species']])
+ax[2, 0].set_xlabel('sepal length (cm)')
+ax[2, 0].set_ylabel('petal width (cm)')
+ax[2, 0].set_title('Sepal Length vs Petal Width')
+ax[2, 1].scatter(df['sepal width (cm)'], df['petal length (cm)'], c=[colors[s] for s in df['species']])
+ax[2, 1].set_xlabel('sepal width (cm)')
+ax[2, 1].set_ylabel('petal length (cm)')
+ax[2, 1].set_title('Sepal Width vs Petal Length')
+# plt.tight_layout() avoid overlapping of the plots.
 # Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html
 plt.tight_layout()
 #plt.show()
-plt.savefig("relationship between features.png") # This will save the plots to a png file.
+# Save the scatter plot to a png file.
+plt.savefig("scatter__investigate_relationships.png")
+
 
 # explanation of the scatter plot:
 # The scatter plot shows the relationship between the sepal length and petal length of the three species.
