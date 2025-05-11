@@ -121,3 +121,9 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
     plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
+
+    # Explanation of each histogram:
+    # Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
+    # Width sepal, 3 cm, is the most common size of the sepal. 3.0 cm is the mean.
+    # Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
+    # Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
