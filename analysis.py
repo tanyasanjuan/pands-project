@@ -152,4 +152,5 @@ plt.xlabel('sepal length (cm)')
 plt.ylabel('petal length (cm)')
 plt.title('Scatter plot of sepal length & petal length')
 plt.legend()
-plt.show()
+#plt.show()
+plt.savefig('sepal_length_vs_petal_length.png') # This will save the plot to a png file.
