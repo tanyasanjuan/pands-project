@@ -131,26 +131,50 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
 # Relationship between sepal length and petal lenght of the three species.
 # Choose two features of the DataFrame.
 
-# group by specie
-# To show different colors for each species in the legend: 
-# Resource to solve the issue, displaying only one color and one specie: https://chatgpt.com/share/6820ddad-9c1c-8012-ba8e-b1ad9f9f2aae
-# Resouce: https://matplotlib.org/stable/gallery/color/named_colors.html
-species = df['species'].unique()
+
 colors = {
     'Iris-setosa': 'salmon',
     'Iris-versicolor': 'turquoise',
     'Iris-virginica': 'violet'
 }
-# loop through each species and create a scatter plot for each one.
+# With ".unique()" we extract the three unique species: 'setosa', 'versicolor', 'virginica'
+species = df['species'].unique()
+
+# axes[0] is the first graph.
+# axes[1] is the second graph.
+# Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
+# figsize is the size of the figure.
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# First plot: sepal length vs petal length
 for sp in species:
     subset = df[df['species'] == sp]
-    #Each group has a label, and we can use the label to color the points in the scatter plot.
-    # The scatter function creates a scatter plot of the two features. 
-    plt.scatter(subset['sepal length (cm)'], subset['petal length (cm)'], label=sp, color=colors[sp])
+    axes[0].scatter(
+        subset['sepal length (cm)'],
+        subset['petal length (cm)'],
+        label=sp,
+        color=colors[sp]
+    )
+axes[0].set_xlabel('sepal length (cm)')
+axes[0].set_ylabel('petal length (cm)')
+axes[0].set_title('Sepal Length vs Petal Length')
+axes[0].legend()
 
-plt.xlabel('sepal length (cm)')
-plt.ylabel('petal length (cm)')
-plt.title('Scatter plot of sepal length & petal length')
-plt.legend()
+# Second plot: sepal width vs petal width
+for sp in species:
+    subset = df[df['species'] == sp]
+    axes[1].scatter(
+        subset['sepal width (cm)'],
+        subset['petal width (cm)'],
+        label=sp,
+        color=colors[sp]
+    )
+axes[1].set_xlabel('sepal width (cm)')
+axes[1].set_ylabel('petal width (cm)')
+axes[1].set_title('Sepal Width vs Petal Width')
+axes[1].legend()
+# avoid overlapping of the plots.
+# Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html
+plt.tight_layout()
 #plt.show()
-plt.savefig('sepal_length_vs_petal_length.png') # This will save the plot to a png file.
+plt.savefig("relationship between features.png") # This will save the plots to a png file.
