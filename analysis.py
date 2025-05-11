@@ -29,8 +29,7 @@ filename = "iris_data.csv"
 # A DataFrame is a two-dimensional data structure with rows and columns, like a table or array.
 # Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
 # Read the file
-df = pd.read_csv(filename)
-df = df.dropna(how='all')
+df = pd.read_csv(filename, header=None)
 
 
 # Add column names to the DataFrame
@@ -122,8 +121,9 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     #plt.show()
     plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
 
-    # Explanation of each histogram:
-    # Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
-    # Width sepal, 3 cm, is the most common size of the sepal. 3.0 cm is the mean.
-    # Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
-    # Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
+# Explanation of each histogram:
+# Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
+# Width sepal, 3 cm, is the most common size of the sepal. 3.0 cm is the mean.
+# Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
+# Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
+
