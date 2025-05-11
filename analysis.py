@@ -178,3 +178,13 @@ axes[1].legend()
 plt.tight_layout()
 #plt.show()
 plt.savefig("relationship between features.png") # This will save the plots to a png file.
+
+# explanation of the scatter plot:
+# The scatter plot shows the relationship between the sepal length and petal length of the three species.
+# The setosa species has a smaller sepal length and petal length than the other two species, and this is the most common size of the sepal and petal.
+# The setosa has a smaller petal width than the other two species.
+# The versicolor species has a larger sepal length and petal length than the setosa species, but smaller than the virginica species.
+# Virginica species has the largest sepal and petal length, applying the same for the width.
+# The versicolor species has a larger sepal width and petal width than the setosa species, but smaller than the virginica species.
+# The petal length and sepal length are positively correlated, meaning that as one increases, the other also increases.
+# And it's the same for the petal and sepal width.
