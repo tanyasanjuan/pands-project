@@ -130,14 +130,26 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
 # We can also check the correlation between the features.
 # Relationship between sepal length and petal lenght of the three species.
 # Choose two features of the DataFrame.
-x = df['sepal length (cm)']
-y = df['petal length (cm)']
 
-# Create a scatter plot of the two features.
-plt.scatter(x, y)
+# group by specie
+# To show different colors for each species in the legend: 
+# Resource to solve the issue, displaying only one color and one specie: https://chatgpt.com/share/6820ddad-9c1c-8012-ba8e-b1ad9f9f2aae
+# Resouce: https://matplotlib.org/stable/gallery/color/named_colors.html
+species = df['species'].unique()
+colors = {
+    'Iris-setosa': 'salmon',
+    'Iris-versicolor': 'turquoise',
+    'Iris-virginica': 'violet'
+}
+# loop through each species and create a scatter plot for each one.
+for sp in species:
+    subset = df[df['species'] == sp]
+    #Each group has a label, and we can use the label to color the points in the scatter plot.
+    # The scatter function creates a scatter plot of the two features. 
+    plt.scatter(subset['sepal length (cm)'], subset['petal length (cm)'], label=sp, color=colors[sp])
+
 plt.xlabel('sepal length (cm)')
 plt.ylabel('petal length (cm)')
 plt.title('Scatter plot of sepal length & petal length')
-# add a leggend, with the name of the species.
-plt.legend(df['species'])
+plt.legend()
 plt.show()
