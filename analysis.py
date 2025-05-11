@@ -106,7 +106,7 @@ import matplotlib.pyplot as plt
 # We can use histograms to visualize the distribution of a dataset.
 # To display the histograms for each of the features, without having to duplicate the code 4 times, you can create for loops, which are useful for repeating an action several times.
 # Resource: https://www.w3schools.com/python/python_for_loops.asp
-
+'''
 # For loops will repeate the instruction, in this case for all the caracteristics of the iris flower.
 # The for loop will iterate over the columns of the DataFrame, and for each column, it will create a histogram.
 for column_name in df.columns[:-1]:  # Exclude the last column (species)
@@ -120,10 +120,24 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
     plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
-
+'''
 # Explanation of each histogram:
 # Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
 # Width sepal, 3 cm, is the most common size of the sepal. 3.0 cm is the mean.
 # Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
 # Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
 
+# We can also check the correlation between the features.
+# Relationship between sepal length and petal lenght of the three species.
+# Choose two features of the DataFrame.
+x = df['sepal length (cm)']
+y = df['petal length (cm)']
+
+# Create a scatter plot of the two features.
+plt.scatter(x, y)
+plt.xlabel('sepal length (cm)')
+plt.ylabel('petal length (cm)')
+plt.title('Scatter plot of sepal length & petal length')
+# add a leggend, with the name of the species.
+plt.legend(df['species'])
+plt.show()
