@@ -117,7 +117,7 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     plt.title(f"Histogram of {column_name}")
     # Save the histogram to a png file.
     # plt.savefig(f"{column_name}_histogram.png") 
-    
+
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
     
@@ -223,7 +223,6 @@ plt.ylabel('Petal length (cm)')
 plt.title('Boxplot of Petal Lengths')
 plt.savefig("petal_lengths_boxplot.png")
 plt.show()
-
 
 
 # Boxplot of the petal width for each species.
