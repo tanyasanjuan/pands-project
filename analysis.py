@@ -271,6 +271,27 @@ plt.title('Boxplot of Sepal width')
 plt.savefig("sepal_widths_boxplot.png")
 plt.show()
 
+# To display the heatmap we can use seaborn.
+# Import seaborn. https://seaborn.pydata.org/generated/seaborn.heatmap.html
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Figsize creat a Matplotlib figure with a custom size.
+# in this case figsize = width of 8, and 6 of height.
+plt.figure(figsize=(8, 6))
+
+# Resource: https://chatgpt.com/share/68224907-43e4-8012-aece-0d4afd1774ac 
+# correlation_matrix - contains the values ​​between -1 and 1.
+correlation_matrix = df.corr(numeric_only=True)
+# annot=True: Draws numerical values ​​directly within each map cell.
+# cmap= selected the color by name,in this case 'flare'
+# https://seaborn.pydata.org/generated/seaborn.color_palette.html
+# fmt= is the format of the numbers, represented by 2 decimals. 
+
+sns.heatmap(correlation_matrix, annot=True, cmap='flare', fmt=".2f")
+plt.title("Heatmap Correlation Matrix")
+plt.savefig("heatmap_correlation_matrix.png")
+plt.show()
 
 # To save the summary of each variable to a text file.
 summary = df.describe()

@@ -56,7 +56,7 @@ The Iris dataset has a total of five variables, which are divided into:
 
 
 ## 🔧 Tools & Technologies
-◽ Python ◽ Git ◽ Github ◽ Jupyter ◽ Numpy ◽ Matplotlib ◽ Scikit-learn
+◽ Python ◽ Git ◽ Github ◽ Jupyter ◽ Numpy ◽ Matplotlib ◽ Scikit-learn ◽ Seaborn
 
 
 ## 💐 Conclussions 
@@ -80,6 +80,7 @@ The virginica specie has larger chacarteristics than versicolor specie, that has
 - Pandas documentation
 - Matplotlib documentation
 - Numpy documentation
+- Seaborn documentation 
 - Python documentation
 - Interactivechaos
 - Chat GPT
