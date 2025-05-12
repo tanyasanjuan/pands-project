@@ -6,49 +6,26 @@
 # Author: Tanya San Juan.
 
 # Import the libraries we need for data analysis.
-
-# Pandas is a data analysis library for Python.
 import pandas as pd
 
-# Scikit-learn is a machine learning library for Python. 
-# It contains datasets examples, including the Iris dataset.
 import sklearn as skl
-
-# Resources: https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
-# To read the dataset, we use the read_csv function from the pandas library.
-# The dataset is in CSV format, and this specify the path to the file. 
-# Meaning, it make the connection to a web server, to have a file.
-# Pandas helps to interpretate the file received.
-
 
 # Import the Iris dataset.
 # Resources: https://archive.ics.uci.edu/dataset/53/iris
 filename = "iris_data.csv"
 
+# To read the dataset, we use the read_csv function from pandas library.
 # The read_csv function reads the CSV file and stores it in a DataFrame (df).
-# A DataFrame is a two-dimensional data structure with rows and columns, like a table or array.
+# Resources: https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
 # Resource: https://www.w3schools.com/python/pandas/pandas_dataframes.asp
 # Read the file
 df = pd.read_csv(filename, header=None)
 
 
 # Add column names to the DataFrame
-# Four columnns that are the caracteristics of the iris flower.
-# The four feature names, are independent variables, which are characteristics measured in centimeters, 
-# related to the sepals and petals of each species.
-# Source: https://www.geeksforgeeks.org/iris-dataset/
+# Resource: https://www.geeksforgeeks.org/iris-dataset/
 df.columns = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'species']
-
-print(df)
-
-# With print (df), we can see its a data set with 150 rows and 5 columns.
-# we can see the first 5 rows of the dataset.
-# The first row is the header, which contains the names of the columns.
-# The first column is the index, which is a unique identifier for each row.
-# The index is not part of the dataset, but it's used to identify each row.
-# The 5th column is the species of the iris flower.
-# The other columns are the features.
-# The last 5 rows of the dataset are the same as the first 5 rows. 
+print(df) 
 
 # Display the species of the iris flower.
 # The species are: setosa, versicolor, and virginica.
@@ -60,8 +37,6 @@ print(df['species'])
 # The head function returns the first 5 rows of the dataset.
 df.head()
 print(df.head())
-# The first 5 rows in the dataset are showing the characteristics of the specie setosa, 
-# including the: sepal_length,sepal_width, petal_length, petal_width
 
 
 # To print the last 5 rows of the dataset, we can use the pandas module and the "tail" 
@@ -69,8 +44,6 @@ print(df.head())
 # Resource: https://www.w3schools.com/python/pandas/pandas_analyzing.asp
 df.tail()
 print(df.tail())
-# The last 5 rows in the dataset are showing the characteristics of the specie virginica, 
-# including the: sepal_length,sepal_width, petal_length, petal_width
 
 
 # Get the number of data for each species.
@@ -84,29 +57,17 @@ print(df['species'].value_counts())
 # Describe the dataset
 df.describe()
 print(df.describe())
-# The describe() function returns a summary of the dataset:
-# - count: Number of non-null values in the column.
-# - mean: Average value of the column.
-# - std: Standard deviation of the column, which measures the amount of variation or dispersion in the data.
-# - min: The minimum value in the column.
-# - 25%: The first quartile, which is the value below which 25% of the data falls.
-# - 50%: The median, which is the value below which 50% of the data falls.
-# - 75%: The third quartile, which is the value below which 75% of the data falls.
-# - max: The maximum value in the column.
-# Resource for quantiles: https://en.wikipedia.org/wiki/Quantile
-# Resource for quartiles: https://en.wikipedia.org/wiki/Quartile
+# The describe() function returns a summary of the dataset.
+# The summary includes the count, mean, standard deviation, minimum, maximum, and quartiles of each variable.
+
 
 # To visualize the data, we can use the matplotlib library.
 # Matplotlib is a plotting library for Python.
 import matplotlib.pyplot as plt
 
 # Display the histogram of each variable.
-# We can use histograms to visualize the distribution of a dataset.
-# To display the histograms for each of the features, without having to duplicate the code 4 times, you can create for loops, which are useful for repeating an action several times.
 # Resource: https://www.w3schools.com/python/python_for_loops.asp
-'''
-# For loops will repeate the instruction, in this case for all the caracteristics of the iris flower.
-# The for loop will iterate over the columns of the DataFrame, and for each column, it will create a histogram.
+
 for column_name in df.columns[:-1]:  # Exclude the last column (species)
     # plt.figure(), creates a separe histogram per each characteristic. 
     # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html
@@ -116,26 +77,20 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     plt.ylabel("frequency")
     plt.title(f"Histogram of {column_name}")
     # Save the histogram to a png file.
-    # plt.savefig(f"{column_name}_histogram.png") 
+    plt.savefig(f"{column_name}_histogram.png") 
 
-    # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
-    #plt.show()
-    
-'''
-# Explanation of each histogram:
-# Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
-# Width sepal, 3 cm, is the most common size of the sepal. 3.0 cm is the mean.
-# Length petal, 1 and 5 cm, is the most common size of the petal. 3.7 cm is the mean.
-# Width petal, 0.1 and 1.5 cm, is the most common size of the petal. 1.2 cm is the mean.
+    # Show all histograms 
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
+    plt.show()    
 
-# We can also check the relationship between the features.
-# We can use scatter plots to visualize the relationship between two variables.
+
+# we can use scatter plots to visualize the relationship between two variables.
 # To have more than two scatter plots, we can use subplots.
 # Subplots are used to create multiple plots in a single figure.
 # Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html
 # https://interactivechaos.com/en/node/605
 
-
+# Check the relationship between the features.
 # import numpy library.
 import numpy as np
 
@@ -189,23 +144,10 @@ plt.tight_layout(rect=[0, 0, 1, 0.97])
 # Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html
 plt.tight_layout()
 # Save the scatter plot to a png file.
-#plt.savefig("scatter__investigate_relationships.png")
-#plt.show()
+plt.savefig("scatter__investigate_relationships.png")
+plt.show()
 
 
-
-# explanation of the scatter plot:
-# The scatter plot shows the relationship between the sepal length and petal length of the three species.
-# The setosa species has a smaller sepal length and petal length than the other two species, and this is the most common size of the sepal and petal.
-# The setosa has a smaller petal width than the other two species.
-# The versicolor species has a larger sepal length and petal length than the setosa species, but smaller than the virginica species.
-# Virginica species has the largest sepal and petal length, applying the same for the width.
-# The versicolor species has a larger sepal width and petal width than the setosa species, but smaller than the virginica species.
-# The petal length and sepal length are positively correlated, meaning that as one increases, the other also increases.
-# And it's the same for the petal and sepal width.
-
-
-# For better visualization of the data, we can use a box plot.
 # Boxplot of the petal lengths for each species.
 # https://www.w3schools.com/python/python_lists_comprehension.asp
 
@@ -240,6 +182,7 @@ plt.title('Boxplot of Petal Widths')
 plt.savefig("petal_widths_boxplot.png")
 plt.show()
 
+
 # Boxplot of the sepal length for each species.
 plt.figure(figsize=(8, 6))
 iris_data_boxplot = [df[df['species'] == sp_name]['sepal length (cm)'] for sp_name in species]
@@ -271,6 +214,7 @@ plt.title('Boxplot of Sepal width')
 plt.savefig("sepal_widths_boxplot.png")
 plt.show()
 
+
 # To display the heatmap we can use seaborn.
 # Import seaborn. https://seaborn.pydata.org/generated/seaborn.heatmap.html
 import seaborn as sns
@@ -292,6 +236,7 @@ sns.heatmap(correlation_matrix, annot=True, cmap='flare', fmt=".2f")
 plt.title("Heatmap Correlation Matrix")
 plt.savefig("heatmap_correlation_matrix.png")
 plt.show()
+
 
 # To save the summary of each variable to a text file.
 summary = df.describe()
