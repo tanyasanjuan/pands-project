@@ -170,6 +170,18 @@ ax[2, 1].scatter(df['sepal width (cm)'], df['petal length (cm)'], c=[colors[s] f
 ax[2, 1].set_xlabel('sepal width (cm)')
 ax[2, 1].set_ylabel('petal length (cm)')
 ax[2, 1].set_title('Sepal Width vs Petal Length')
+
+# Create custom legend handles to put only one legend above all subplots
+# Resource: https://chatgpt.com/share/6821e2e7-e3d8-8012-8750-d37fe43e1460
+from matplotlib.patches import Patch
+legend_handles = [Patch(color=color, label=label) for label, color in colors.items()]
+
+# Add a single legend above all subplots
+fig.legend(handles=legend_handles, loc='upper center', ncol=len(colors), bbox_to_anchor=(0.5, 1.02))
+
+# Adjust layout to make space for the legend
+plt.tight_layout(rect=[0, 0, 1, 0.97])
+
 # plt.tight_layout() avoid overlapping of the plots.
 # Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html
 plt.tight_layout()
