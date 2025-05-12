@@ -56,11 +56,15 @@ The Iris dataset has a total of five variables, which are divided into:
 
 
 ## 🔧 Tools & Technologies
-◽ Python ◽ Git ◽ Github ◽ Jupyter ◽ Numpy ◽ Seaborn ◽ Matplotlib ◽ Scikit-learn
+◽ Python ◽ Git ◽ Github ◽ Jupyter ◽ Numpy ◽ Matplotlib ◽ Scikit-learn
 
 
 ## 💐 Conclussions 
-
+There are four numerical columns, consistente in independent variables, which are characteristics measured in centimeters, related to the sepals and petals.
+There is one categorical column which is the species of iris, three species in total, used to have the relationship between the variables.
+We could see the setosa flower is the easiest specie to distinguish this because the its small size. 
+The virginica and versicolor species are more difficult to distinguish because they are often mixed. 
+The virginica specie has larger chacarteristics than versicolor specie, that has medium size. 
 
 ## 📚 Research and References
 ◽ Throughout the project, research and external resources have been cited.
@@ -76,6 +80,7 @@ The Iris dataset has a total of five variables, which are divided into:
 - Pandas documentation
 - Matplotlib documentation
 - Numpy documentation
+- Python documentation
 - Interactivechaos
 - Chat GPT
 
@@ -88,5 +93,5 @@ The Iris dataset has a total of five variables, which are divided into:
 ◽ Atlantic Tecnhological University
 
 
-👨‍🎓 Author
+## 👨‍🎓 Author
 ◽ Student: Tanya San Juan.
