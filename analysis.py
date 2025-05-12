@@ -47,9 +47,7 @@ print(df)
 # The first column is the index, which is a unique identifier for each row.
 # The index is not part of the dataset, but it's used to identify each row.
 # The 5th column is the species of the iris flower.
-# The target variable is the variable we want to predict.
-# The other columns are the features, 
-# which are the variables we use to predict the target variable.
+# The other columns are the features.
 # The last 5 rows of the dataset are the same as the first 5 rows. 
 
 # Display the species of the iris flower.
@@ -177,7 +175,7 @@ ax[2, 1].set_title('Sepal Width vs Petal Length')
 plt.tight_layout()
 #plt.show()
 # Save the scatter plot to a png file.
-plt.savefig("scatter__investigate_relationships.png")
+#plt.savefig("scatter__investigate_relationships.png")
 
 
 # explanation of the scatter plot:
@@ -189,3 +187,9 @@ plt.savefig("scatter__investigate_relationships.png")
 # The versicolor species has a larger sepal width and petal width than the setosa species, but smaller than the virginica species.
 # The petal length and sepal length are positively correlated, meaning that as one increases, the other also increases.
 # And it's the same for the petal and sepal width.
+
+# To save the summary of each variable to a text file.
+summary = df.describe()
+with open('iris_summary.txt', 'w') as f:
+    f.write("Iris Dataset Summary\n")
+    f.write(str(summary))
