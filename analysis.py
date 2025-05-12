@@ -256,6 +256,22 @@ plt.savefig("sepal_lengths_boxplot.png")
 plt.show()
 
 
+# Boxplot of the sepal length for each species.
+plt.figure(figsize=(8, 6))
+iris_data_boxplot = [df[df['species'] == sp_name]['sepal width (cm)'] for sp_name in species]
+
+# Boxplot and style
+plt.boxplot(iris_data_boxplot, tick_labels=species)
+plt.grid(axis='y')
+
+# labels y title
+plt.xlabel('Species')
+plt.ylabel('Sepal width (cm)')
+plt.title('Boxplot of Sepal width')
+plt.savefig("sepal_widths_boxplot.png")
+plt.show()
+
+
 # To save the summary of each variable to a text file.
 summary = df.describe()
 with open('iris_summary.txt', 'w') as f:
