@@ -200,6 +200,28 @@ plt.tight_layout()
 # The petal length and sepal length are positively correlated, meaning that as one increases, the other also increases.
 # And it's the same for the petal and sepal width.
 
+
+# For better visualization of the data, we can use a box plot.
+# Boxplot of the petal lengths for each species.
+# https://www.w3schools.com/python/python_lists_comprehension.asp
+
+plt.figure(figsize=(8, 6))
+
+iris_data_boxplot = [df[df['species'] == sp_name]['petal length (cm)'] for sp_name in species]
+
+# Boxplot and style
+plt.boxplot(iris_data_boxplot, tick_labels=species)
+plt.grid(axis='y')
+
+# labels y title
+plt.xlabel('Species')
+plt.ylabel('Petal length (cm)')
+plt.title('Boxplot of Petal Lengths')
+plt.show()
+plt.savefig("petal_lengths_boxplot.png")
+
+
+
 # To save the summary of each variable to a text file.
 summary = df.describe()
 with open('iris_summary.txt', 'w') as f:
