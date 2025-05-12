@@ -115,9 +115,12 @@ for column_name in df.columns[:-1]:  # Exclude the last column (species)
     plt.xlabel(column_name)
     plt.ylabel("frequency")
     plt.title(f"Histogram of {column_name}")
+    # Save the histogram to a png file.
+    # plt.savefig(f"{column_name}_histogram.png") 
+    
     # Show all histograms https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html
     #plt.show()
-    plt.savefig(f"{column_name}_histogram.png") # This will save the plots to a png file.
+    
 '''
 # Explanation of each histogram:
 # Lenght sepal, 5.5 and 6.5 cm, is the most common size of the sepal. 5.8 cm is the mean.
@@ -185,9 +188,10 @@ plt.tight_layout(rect=[0, 0, 1, 0.97])
 # plt.tight_layout() avoid overlapping of the plots.
 # Resource: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html
 plt.tight_layout()
-#plt.show()
 # Save the scatter plot to a png file.
 #plt.savefig("scatter__investigate_relationships.png")
+#plt.show()
+
 
 
 # explanation of the scatter plot:
@@ -217,8 +221,25 @@ plt.grid(axis='y')
 plt.xlabel('Species')
 plt.ylabel('Petal length (cm)')
 plt.title('Boxplot of Petal Lengths')
-plt.show()
 plt.savefig("petal_lengths_boxplot.png")
+plt.show()
+
+
+
+# Boxplot of the petal width for each species.
+plt.figure(figsize=(8, 6))
+iris_data_boxplot = [df[df['species'] == sp_name]['petal width (cm)'] for sp_name in species]
+
+# Boxplot and style
+plt.boxplot(iris_data_boxplot, tick_labels=species)
+plt.grid(axis='y')
+
+# labels y title
+plt.xlabel('Species')
+plt.ylabel('Petal width (cm)')
+plt.title('Boxplot of Petal Widths')
+plt.savefig("petal_widths_boxplot.png")
+plt.show()
 
 
 
