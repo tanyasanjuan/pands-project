@@ -1,8 +1,29 @@
 # pands-project
-## 📜Introduction.
+
+
+## 📜 Project Introduction.
 This project consists in analysing the Iris dataset, available in the UC Irvine machine learning repository.
 https://archive.ics.uci.edu/dataset/53/iris.
+This project consists of exploring and visualizing the analysis of the Iris dataset, seeing the correlations of Iris species based on their morphological characteristics (sepal and petal). Using libraries such as Matplotlib, and using Pandas for the data processing.
 
+## 📁 Repository Structure
+This repository is organized in: 
+- README.md 
+- analysis.py
+- iris.csv
+- visualization of the data in format png.
+- summary.txt 
+
+## 🎯 Objective
+- Load the iris dataset.
+- Perform a exploratory data analysis (EDA).
+- Visualize a histogram of each variable to png files.
+- Visualize a scatter plot of each pair of variables.
+- Output a summary of each variable to a single text file.
+- Conclusions.
+
+
+# 🌷 Iris dataset
 The Iris dataset contains, as its name suggests, Iris flowers data. 
 It consists in 150 flower samples, classified into three species: **Iris-setosa**, **Iris-versicolor**, and **Iris-virginica**.
 
@@ -19,16 +40,8 @@ The Iris dataset has a total of five variables, which are divided into:
 
 ◽ Petal width
 
-## 🧪Analysis.
-The aim of this project is to analyse the iris data set, performing a exploratory data analysis (EDA):
-1. How the dataset is structured. 
-2. Visualization of each feature, using Matplotlib.
-3. Correlations between variables
-4. Comparison between species
-5. Visualization of the information. 
-6. Conclusion. 
 
-## Program structure
+## 💻 Program structure
 - Import lybraries needed.
 - Import dataset and read the dataset.
 - Rename columns for easier reading.
@@ -37,5 +50,43 @@ The aim of this project is to analyse the iris data set, performing a explorator
 - Display the names of each species 
 - Display the first five and last five rows of the dataset. 
 - Get the number of  data for each species.
+- Display the mean, std, min, max and median for each feature.
 - Import matplotlib
 - Histogram of each characteristic.
+
+
+## 🔧 Tools & Technologies
+◽ Python ◽ Git ◽ Github ◽ Jupyter ◽ Numpy ◽ Seaborn ◽ Matplotlib ◽ Scikit-learn
+
+
+## 💐 Conclussions 
+
+
+## 📚 Research and References
+◽ Throughout the project, research and external resources have been cited.
+
+◽ These references can be found in the code comments or in links from reliable sources, such as:
+
+- Python Docs
+- W3Schools
+- UC Irvine Machine Learning Repository
+- Wikipedia
+- Geeksforgeeks 
+- Scikit-learn documentation
+- Pandas documentation
+- Matplotlib documentation
+- Numpy documentation
+- Interactivechaos
+- Chat GPT
+
+
+## 👨‍🏫 Course Information
+◽ Professor: Andrew Beatty.
+
+◽ Module: Programming and Scripting
+
+◽ Atlantic Tecnhological University
+
+
+👨‍🎓 Author
+◽ Student: Tanya San Juan.
