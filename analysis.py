@@ -240,6 +240,20 @@ plt.title('Boxplot of Petal Widths')
 plt.savefig("petal_widths_boxplot.png")
 plt.show()
 
+# Boxplot of the sepal length for each species.
+plt.figure(figsize=(8, 6))
+iris_data_boxplot = [df[df['species'] == sp_name]['sepal length (cm)'] for sp_name in species]
+
+# Boxplot and style
+plt.boxplot(iris_data_boxplot, tick_labels=species)
+plt.grid(axis='y')
+
+# labels y title
+plt.xlabel('Species')
+plt.ylabel('Sepal length (cm)')
+plt.title('Boxplot of Sepal length')
+plt.savefig("sepal_lengths_boxplot.png")
+plt.show()
 
 
 # To save the summary of each variable to a text file.
